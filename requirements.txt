@@ -1,3 +1,324 @@
+# ═══════════════════════════════════════════════════════════════════════════════
+# FILE 2: requirements.txt
+# ═══════════════════════════════════════════════════════════════════════════════
+
+requirements = '''# JokerATC v2.0 - Dependencies
+# Install with: pip install -r requirements.txt
+
+# Core TUI Framework
+textual>=0.52.0
+rich>=13.0.0
+
+# System Monitoring
 psutil>=5.9.0
+
+# Sound Effects
 pygame>=2.5.0
-numpy>=1.24.0
+
+# Optional: Better terminal experience
+# windows-curses>=2.3.0; platform_system=="Windows"
+'''
+
+with open('/mnt/agents/output/jokeratc/requirements.txt', 'w') as f:
+    f.write(requirements)
+
+print("✅ requirements.txt saved!")
+
+# ═══════════════════════════════════════════════════════════════════════════════
+# FILE 3: README.md
+# ═══════════════════════════════════════════════════════════════════════════════
+
+readme = '''# ⚡ JokerATC v2.0 - Cyberpunk Terminal Interface
+
+![Python](https://img.shields.io/badge/Python-3.8%2B-blue)
+![License](https://img.shields.io/badge/License-MIT-green)
+![Platform](https://img.shields.io/badge/Platform-Linux%20%7C%20macOS%20%7C%20Windows-orange)
+
+> **A futuristic, sci-fi inspired terminal interface inspired by eDEX-UI but built with modern Python.**
+
+![JokerATC Screenshot](screenshot.png)
+
+---
+
+## ✨ Features
+
+### 🖥️ System Monitoring
+- **Real-time CPU** usage with per-core monitoring
+- **RAM usage** with visual progress bars
+- **Disk usage** for all partitions
+- **Temperature monitoring** (CPU/GPU sensors)
+- **Network speed** with real-time download/upload rates
+- **Process viewer** with top CPU/memory consumers
+
+### 🎨 Visual Effects
+- **6 Unique Themes**: TRON, MATRIX, CYBERPUNK, AMBER, NEON, OCEAN
+- **Matrix Rain** animation with Katakana, Greek, and Hex characters
+- **Smooth animations** and transitions
+- **ASCII art banners** and boot sequences
+- **Color-coded** system status indicators
+
+### 🔊 Sound Effects
+- **Boot sound** - Futuristic power-up sequence
+- **Typing sounds** - Tech blips on every keystroke
+- **Ambient drone** - Background atmosphere
+- **Alert sounds** - Warning beeps
+- **Success chimes** - Positive feedback
+- **Hover effects** - UI interaction sounds
+
+### 💻 Terminal
+- **Built-in command processor** with 15+ commands
+- **Command history** and autocomplete hints
+- **Shell command execution** with safety timeout
+- **Colored output** with syntax highlighting
+- **Help system** with command documentation
+
+### 📁 File Explorer
+- **Directory tree** with file icons
+- **File size** display (B, KB, MB, GB)
+- **File type detection** with emoji icons
+- **Real-time updates**
+
+---
+
+## 🚀 Quick Start
+
+### Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/yourusername/jokeratc.git
+cd jokeratc
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Run JokerATC
+python main.py
+```
+
+### Or install directly
+
+```bash
+pip install textual rich psutil pygame
+python main.py
+```
+
+---
+
+## 🎮 Controls
+
+| Key | Action |
+|-----|--------|
+| `Q` | Quit JokerATC |
+| `R` | Refresh all widgets |
+| `T` | Cycle through themes |
+| `S` | Toggle sound effects |
+| `M` | Toggle matrix rain |
+| `F5` | Refresh (alternative) |
+| `Ctrl+C` | Force quit |
+
+---
+
+## 💻 Terminal Commands
+
+| Command | Description |
+|---------|-------------|
+| `help` | Show all available commands |
+| `clear` | Clear terminal screen |
+| `sysinfo` | Display system information |
+| `neofetch` | ASCII art system info |
+| `theme` | List available themes |
+| `theme <name>` | Switch to theme (tron/matrix/cyberpunk/amber/neon/ocean) |
+| `sound` | Toggle sound on/off |
+| `matrix` | Toggle matrix rain on/off |
+| `reboot` | Simulate system reboot |
+| `shutdown` | Exit JokerATC |
+| `whoami` | Show current user |
+| `uptime` | Show system uptime |
+| `ps` | List running processes |
+| `net` | Show network information |
+| `ping <host>` | Ping a host |
+| `banner` | Show JokerATC ASCII banner |
+
+---
+
+## 🎨 Themes
+
+### TRON (Default)
+Green and cyan futuristic interface inspired by TRON Legacy.
+
+### MATRIX
+Classic green Matrix code rain with dark background.
+
+### CYBERPUNK 2077
+Neon pink and cyan cyberpunk aesthetic.
+
+### AMBER CRT
+Retro amber monochrome terminal style.
+
+### NEON NIGHTS
+Vibrant pink, purple, and blue neon colors.
+
+### DEEP OCEAN
+Calming blue and cyan ocean-inspired theme.
+
+---
+
+## 📁 Project Structure
+
+```
+jokeratc/
+├── main.py              # Main application entry point
+├── requirements.txt     # Python dependencies
+├── config.json          # User configuration (auto-generated)
+├── README.md           # This file
+├── themes/             # Custom theme files
+│   └── default.json
+├── sounds/             # Sound effect files (optional)
+│   └── generated/      # Procedurally generated sounds
+└── docs/               # Documentation
+```
+
+---
+
+## ⚙️ Configuration
+
+Configuration is automatically saved to `config.json`:
+
+```json
+{
+  "theme": "tron",
+  "sound_enabled": true,
+  "matrix_enabled": true,
+  "animation_speed": 1.0,
+  "show_processes": true,
+  "show_network": true,
+  "show_file_explorer": true,
+  "terminal_history_limit": 100
+}
+```
+
+---
+
+## 🔧 Requirements
+
+- **Python 3.8+**
+- **Linux/macOS/Windows**
+- **Terminal with Unicode support** (for best experience)
+
+### Python Packages
+- `textual` - TUI framework
+- `rich` - Rich text and formatting
+- `psutil` - System monitoring
+- `pygame` - Sound effects (optional)
+
+---
+
+## 🐛 Troubleshooting
+
+### Sound not working?
+```bash
+# Install pygame
+pip install pygame
+
+# Or disable sound in config.json
+# Set "sound_enabled": false
+```
+
+### Permission errors?
+```bash
+# Run with sudo for full system access
+sudo python main.py
+```
+
+### Display issues?
+```bash
+# Ensure your terminal supports Unicode
+export LANG=en_US.UTF-8
+
+# Use a modern terminal (Alacritty, Kitty, iTerm2, Windows Terminal)
+```
+
+---
+
+## 📝 License
+
+MIT License - feel free to use, modify, and distribute!
+
+---
+
+## 🙏 Credits
+
+- Inspired by [eDEX-UI](https://github.com/GitSquared/edex-ui)
+- Built with [Textual](https://github.com/Textualize/textual)
+- Powered by [Rich](https://github.com/Textualize/rich)
+
+---
+
+## 🔗 Connect
+
+Made with ❤️ by JokerATC Team
+
+**"The future is already here — it's just not evenly distributed."** — William Gibson
+'''
+
+with open('/mnt/agents/output/jokeratc/README.md', 'w') as f:
+    f.write(readme)
+
+print("✅ README.md saved!")
+
+# ═══════════════════════════════════════════════════════════════════════════════
+# FILE 4: config.json (Default Configuration)
+# ═══════════════════════════════════════════════════════════════════════════════
+
+config = '''{
+  "theme": "tron",
+  "sound_enabled": true,
+  "matrix_enabled": true,
+  "animation_speed": 1.0,
+  "show_processes": true,
+  "show_network": true,
+  "show_file_explorer": true,
+  "terminal_history_limit": 100,
+  "auto_refresh_interval": 1.0,
+  "matrix_update_interval": 0.15,
+  "first_run": true
+}
+'''
+
+with open('/mnt/agents/output/jokeratc/config.json', 'w') as f:
+    f.write(config)
+
+print("✅ config.json saved!")
+
+# ═══════════════════════════════════════════════════════════════════════════════
+# FILE 5: themes/default.json (Theme Template)
+# ═══════════════════════════════════════════════════════════════════════════════
+
+theme_template = '''{
+  "custom_themes": {
+    "mytheme": {
+      "name": "My Custom Theme",
+      "primary": "#ff0000",
+      "secondary": "#00ff00",
+      "accent": "#0000ff",
+      "bg": "#000000",
+      "text": "#ffffff",
+      "border": "#ff0000",
+      "glow": "#ff0000",
+      "danger": "#ff3333",
+      "warning": "#ffaa00",
+      "success": "#00ff00"
+    }
+  }
+}
+'''
+
+with open('/mnt/agents/output/jokeratc/themes/default.json', 'w') as f:
+    f.write(theme_template)
+
+print("✅ themes/default.json saved!")
+
+print("\n" + "="*60)
+print("📦 ALL JOKERATC FILES CREATED SUCCESSFULLY!")
+print("="*60)
