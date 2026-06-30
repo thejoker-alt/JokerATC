@@ -1,7 +1,7 @@
 # ═══════════════════════════════════════════════════════════════════════════════
 # COMPLETE README.md - DETAILED DOCUMENTATION
 # ═══════════════════════════════════════════════════════════════════════════════
-
+ 
 readme = '''# ⚡ JOKERATC v2.0 - Cyberpunk Terminal Interface
 
 ![Python](https://img.shields.io/badge/Python-3.8%2B-blue)
